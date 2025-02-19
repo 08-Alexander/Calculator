@@ -1,40 +1,43 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Calculator.MainPage">
 
-    <Grid RowDefinitions ="Auto , Auto, Auto, Auto, Auto, Auto , Auto, Auto "
-          ColumnDefinitions="Auto, Auto, Auto, Auto">
-        <Entry Grid.Row="0" Grid.ColumnSpan="4"/>
-        <Entry Grid.Row="1" Grid.ColumnSpan="4"/>
+    <Grid RowDefinitions="*, *, *, *, *, *"
+          ColumnDefinitions="*, *, *, *"
+          RowSpacing="5"
+          ColumnSpacing="5">
 
-        <!--Rad 1 -->
-        <Button Grid.Row="2" Grid.Column="0" Text="C" Clicked="NumberButton"/>
-        <Button Grid.Row="2" Grid.Column="1" Text="C" Clicked="NumberButton"/>
-        <Button Grid.Row="2" Grid.Column="2" Text="C" Clicked="ClearButton"/>
-        <Button Grid.Row="2" Grid.Column="3" Text="/" Clicked="ClearButton"/>
+        <!-- Rad 1: Display knappar för siffror och operationer -->
+        <Label x:Name="ResultDisplay" Text="0" FontSize="32" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Row="0" Grid.ColumnSpan="4" />
+
+        <!-- Rad 2 -->
+
+        <Button Grid.Row="2" Grid.Column="0" Text="7" Clicked="ONButtonClicked" Background="Gray"/>
+        <Button Grid.Row="2" Grid.Column="1" Text="8" Clicked="ONButtonClicked" Background="Gray"/>
+        <Button Grid.Row="2" Grid.Column="2" Text="9" Clicked="ONButtonClicked" Background="Gray"/>
+        <Button Grid.Row="2" Grid.Column="3" Text="/" Clicked="ONButtonClicked" Background="Gray"/>
+
+        <!-- Rad 3 -->
+        <Button Grid.Row="3" Grid.Column="0" Text="4" Clicked="ONButtonClicked" Background="Gray"/>
+        <Button Grid.Row="3" Grid.Column="1" Text="5" Clicked="ONButtonClicked" Background="Gray"/>
+        <Button Grid.Row="3" Grid.Column="2" Text="6" Clicked="ONButtonClicked" Background="Gray"/>
+        <Button Grid.Row="3" Grid.Column="3" Text="X" Clicked="ONButtonClicked" Background="Gray"/>
+
+        <!-- Rad 4 -->
+        <Button Grid.Row="4" Grid.Column="0" Text="1" Clicked="ONButtonClicked" Background="Gray"/>
+        <Button Grid.Row="4" Grid.Column="1" Text="2" Clicked="ONButtonClicked" Background="Gray"/>
+        <Button Grid.Row="4" Grid.Column="2" Text="3" Clicked="ONButtonClicked" Background="Gray"/>
+        <Button Grid.Row="4" Grid.Column="3" Text="-" Clicked="ONButtonClicked" Background="Gray"/>
+
+        <!-- Rad 5 -->
+        <Button Grid.Row="5" Grid.Column="0" Text="Clear" Clicked="ONButtonClicked" Background="Gray"/>
+        <Button Grid.Row="5" Grid.Column="1" Text="0" Clicked="ONButtonClicked" Background="Gray"/>
+        <Button Grid.Row="5" Grid.Column="2" Text="=" Clicked="OnEqualsButtonClicked"/>
+        <Button Grid.Row="5" Grid.Column="3" Text="+" Clicked="ONButtonClicked" Background="Gray"/>
         
-        <!--Rad 2 -->
-        <Button Grid.Row="3" Grid.Column="0" Text="C" Clicked="NumberButton"/>
-        <Button Grid.Row="3" Grid.Column="1" Text="C" Clicked="NumberButton"/>
-        <Button Grid.Row="3" Grid.Column="2" Text="C" Clicked="NumberButton"/>
-        <Button Grid.Row="3" Grid.Column="3" Text="X" Clicked="NumberButton"/>
-        <!--Rad 3 -->
-        <Button Grid.Row="4" Grid.Column="0" Text="C" Clicked="NumberButton"/>
-        <Button Grid.Row="4" Grid.Column="1" Text="C" Clicked="NumberButton"/>
-        <Button Grid.Row="4" Grid.Column="2" Text="C" Clicked="NumberButton"/>
-        <Button Grid.Row="4" Grid.Column="3" Text="-" Clicked="NumberButton"/>
-        <!--Rad 4 -->
-        <Button Grid.Row="5" Grid.Column="0" Text="C" Clicked="NumberButton"/>
-        <Button Grid.Row="5" Grid.Column="1" Text="C" Clicked="NumberButton"/>
-        <Button Grid.Row="5" Grid.Column="2" Text="C" Clicked="NumberButton"/>
-        <Button Grid.Row="5" Grid.Column="3" Text="+" Clicked="NumberButton"/>
-        <!--Rad 5 -->
-        <Button Grid.Row="6" Grid.Column="0" Text="C" Clicked="ClearButton"/>
-        <Button Grid.Row="6" Grid.Column="1" Text="C" Clicked="ClearButton"/>
-        <Button Grid.Row="6" Grid.Column="2" Text="C" Clicked="ClearButton"/>
-        <Button Grid.Row="6" Grid.Column="3" Text="=" Clicked="ClearButton"/>
-
-
     </Grid>
+
 </ContentPage>
+
+
+
